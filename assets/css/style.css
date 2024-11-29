@@ -462,6 +462,7 @@ td {
     /* Buttons */
     .decrease-value-btn, .increase-value-btn {
         padding: 10px 18px;
+        touch-action: manipulation;
     }
 
     .decrease-value-btn:active, .increase-value-btn:active {
