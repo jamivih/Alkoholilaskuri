@@ -1,0 +1,480 @@
+:root {
+    --container-bg: #F5F5F7;
+    --drink-section-bg: white;
+    --text-color: black;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --input-bg: #edeef0;
+    --border-line: 1px solid #0000002d;
+    --secondary-btn-text-color: black;
+    --secondary-btn-bg-hover: rgba(245, 245, 245, 0.681);
+}
+
+.darkmode {
+    --container-bg: #141414;
+    --drink-section-bg: rgb(31, 31, 31);
+    --text-color: white;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.505);
+    --input-bg: #2d2c2c;
+    --border-line: 1px solid #ffffff38;
+    --secondary-btn-text-color: white;
+    --secondary-btn-bg-hover: #ffffff09;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--text-color);
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    background-color: var(--container-bg);
+}
+
+.add-drink-section {
+    background-color: var(--drink-section-bg);
+    width: 100%;
+    max-width: 800px;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+}
+
+.input-row {
+    display: flex;
+    /* align-items: center;
+    justify-content: space-between; */
+    border-radius: 30px;
+    background-color: var(--input-bg);
+    /* margin-bottom: 0; */
+
+    margin-bottom: 25px;
+    /* margin-top: 25px; */
+    
+}
+
+/*Drink table section*/
+
+header {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+
+#add-drink-form {
+    display: none;
+    text-align: center;
+}
+
+
+
+input {
+    color: var(--text-color);
+    flex: 1;
+    text-align: center;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 15px;
+    font-weight: 14px;
+}
+
+select {
+    padding: 5px;
+    border: none;
+    border-radius: 30px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    /* text-align: center; */
+    /* width: 80%; */
+}
+.drink-header {
+    display: flex;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.drink-details {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.value-input {
+    text-align: center;
+}
+
+.drink-name {
+    margin: 0;
+    /* display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; */
+}
+
+.drink-cap, .drink-alc, .drink-amount {
+    display: inline;
+    margin: 0 5px;
+}
+
+td {
+    padding: 5px;
+}
+
+
+
+.drink-table-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#total-table {
+    margin-top: 15px;
+    width: 100%;
+    table-layout: fixed;   /* Fixes table layout to honor set widths */
+    border-collapse: collapse;
+}
+
+.total-text {
+    text-align: left;
+    font-weight: bold;
+    border-spacing: 0px;
+
+}
+
+.total-values {
+      /* Distribute remaining width equally among 4 columns */
+    text-align: center;
+    
+}
+
+.edit-name {
+    padding: 5px;
+    max-width: fit-content;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    margin: 0;
+    border-radius: 30px;
+
+}
+
+.edit-details {
+    display: block;
+    max-width: 50px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    padding: 0;
+    font-size: 0.9em;
+    padding: 5px;
+    text-align: center;
+    margin: 0;
+    border-radius: 30px;
+
+}
+
+.border-line {
+    border-bottom: var(--border-line);
+    margin-top: 15px;
+}
+
+
+
+/*Drink table section buttons*/
+.primary-btn {
+    background-color: #5949ff;
+    border: none;
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    outline: none;
+    padding: 14px 30px;
+    font-size: 15px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background-color: #4b3bfe;
+}
+
+.secondary-btn {
+    border: none;
+    background-color: transparent;
+    color: var(--secondary-btn-text-color);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    outline: none;
+    padding: 10px 25px;
+    font-size: 14px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-btn-bg-hover);
+}
+
+/* #add-drink-btn {
+    margin-top: 30px;
+    margin-bottom: 30px;
+} */
+
+
+.increase-value-btn {
+    outline: none;
+    padding: 14px 30px;
+    background-color: #5949ff;
+    color: #ffffff;
+    /* border: 1px solid #1e1e1e; */
+    border: none;
+    font-size: 16px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.increase-value-btn:hover {
+    transform: scale(1.07);
+    background-color: #4b3bfe;
+}
+
+.decrease-value-btn {
+    outline: none;
+    padding: 14px 30px;
+    background-color: #5949ff;
+    color: #ffffff;
+    /* border: 1px solid #1e1e1e; */
+    border: none;
+    font-size: 16px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+
+}
+
+.decrease-value-btn:hover {
+    transform: scale(1.07);
+    background-color: #4b3bfe;
+}
+
+#theme-toggle {
+    cursor: pointer;
+}
+
+/*count-bac-section*/
+.count-bac-section {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.gender-input {
+    display: grid;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    text-align: left;
+    justify-content: center;
+}
+#gender-male {
+    text-align: left;
+}
+
+#edit-drink {
+    padding: 0;
+    cursor: pointer;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    /* background-color: #ff5945; */
+}
+
+.save-input-btn {
+    padding: 0;
+    cursor: pointer;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    /* background-color: #ff5945;  */
+}
+
+#remove-drink {
+    outline: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin-right: 35px;
+    font-size: 1em;
+    /* margin-top: 14px;
+
+    /* background-color: #ff5945; */
+
+}
+
+#edit-drink {
+    margin-left: 35px;
+    font-size: 1em;
+}
+
+#save-drink {
+    margin-left: 35px;
+    font-size: 1em;
+}
+
+#permille {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.chart-output {
+    padding: 10px;
+}
+
+/* Dark mode */
+/* @media (prefers-color-scheme: dark) {
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Tahoma, sans-serif;
+        box-sizing: border-box;
+        color: white;
+    }
+    
+    .container {
+        background-color: #141414;
+    }
+
+    .add-drink-section {
+        background-color: rgb(31, 31, 31);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.505);
+    }
+
+    .input-row {
+        background-color: #2d2c2c;
+    }
+
+    .edit-name, .edit-details {
+        background-color: #2d2c2c;
+    }
+
+    .border-line {
+        border-bottom: 1px solid #ffffff38;
+    } */
+
+    /* Buttons */
+    /* .secondary-btn:hover {
+        background-color: #ffffff07;
+    }
+} */
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        padding-top: 35px;
+        padding-left: 25px;
+        padding-right: 15px;
+    }
+
+    header {
+        padding-left: 25px;
+        padding-right: 15px;
+    }
+
+    input {
+        padding: 10px;
+    }
+
+    .input-row {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .add-drink-section {
+        padding: 0;
+        margin: 70px auto 20px;
+    }
+
+    #drink-table {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .drink-header {
+        max-width: 70%;
+    }
+
+    .drink-name {
+        font-size: 0.9em;
+    }
+
+    .drink-details {
+        font-size: 0.8em;
+    }
+
+    .border-line {
+        margin: 0px 15px;
+    }
+
+    #total-table {
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .total-text, .total-values {
+        font-size: 0.9em;
+    }
+
+    /* Buttons */
+    .decrease-value-btn, .increase-value-btn {
+        padding: 10px 18px;
+    }
+
+    .decrease-value-btn:active, .increase-value-btn:active {
+        transform: scale(1.07);
+        background-color: #4b3bfe;
+    }
+
+    #edit-drink, #save-drink {
+        margin: 0;
+        position: absolute;
+        transform: translate(30px, 4px);
+        font-size: 0.7em;
+        
+    }
+
+    #remove-drink {
+        position: absolute;
+        transform: translate(-38px, 4px);
+        font-size: 0.7em;
+    }
+    
+  }

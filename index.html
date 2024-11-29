@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alkoholilaskuri</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/icons8-whiskey-50.png">
+</head>
+
+<body class="">
+    <div class="container">
+        <span id="theme-toggle">Teema</span>
+        <div class="add-drink-section">
+            <h1>Alkoholilaskuri</h1>
+            <header>Alkoholilaskurin avulla voit lisätä haluamasi juomia ja laskea arvion veren alkoholipitoisuudesta.
+            </header>
+            <div id="add-drink-form">
+                <label for="name">Nimi</label>
+                <div class="input-row">  
+                    <input id="drink-name" type="text" name="name" required>
+                </div>
+                <label for="capacity">Tilavuus (cl)</label>
+                <div class="input-row">
+                    <button id="decrease-cap" class="decrease-value-btn" onclick="decreaseValue(this)">-</button>
+                    <input id="drink-capacity" class="value-input" type="text" name="capacity" required>
+                    <button id="increase-cap" class="increase-value-btn" onclick="increaseValue(this)">+</button>
+                </div>
+                <label for="alcohol">Vahvuus %</label>
+                <div class="input-row">
+                    <button id="decrease-alc" class="decrease-value-btn" onclick="decreaseValue(this)">-</button>
+                    <input id="drink-alcohol" class="value-input" type="text" name="alcohol" value="5.5" placeholder=5.5 required>
+                    <button id="increase-alc" class="increase-value-btn" onclick="increaseValue(this)">+</button>
+                </div>
+                <label for="calories">Kalorit</label>
+                <div class="input-row">
+                    <input id="drink-calories" type="text">
+                    <select id="calorie-type">
+                        <option value="per100ml">kcal/100ml</option>
+                        <option value="total">kcal/juoma</option>
+                    </select>
+                </div>
+                <button id="drink-to-table-btn" class="primary-btn">Lisää</button>
+                <button id="cancel-btn" class="secondary-btn" onclick="addDrinkFormDisplay()"><i class="fa-solid fa-xmark"></i> Peruuta</button>
+            </div>
+            <div class="drink-table-section">
+                <h2>Juomat</h2>
+                <!-- <div class="border-line"></div> -->
+                <table id="drink-table">
+                    <!-- <tr>
+                        <td class="drink-buttons">
+                            <button id="decrease-drink" class="decrease-value-btn" onclick="">-</button>
+                            <span id="edit-drink" class="" onclick="">E</span>
+                        </td>
+                        <td class="drink-info">
+                            <div class="drink-header">
+                                <h3 class="drink-name">Original Long Drink</h3>
+                            </div>
+                            <div class="drink-details">
+                                <span class="drink-cap">33 cl</span>
+                                <span class="drink-alc">5.5 %</span>
+                                <span class="drink-amount" id="1">3 kpl</span>
+                            </div>
+                        </td>
+                        <td class="drink-buttons">
+                            <span id="remove-drink" class="" onclick="">R</span>
+                            <button id="increase-drink" class="increase-value-btn" onclick="">+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="drink-buttons">
+                            <button id="decrease-drink" class="decrease-value-btn" onclick="">-</button>
+                            <span id="edit-drink" class="" onclick="">E</span>
+                        </td>
+                        <td class="drink-info">
+                            <div class="drink-header">
+
+                                <h3 class="drink-name">Lapin Kulta Pure</h3>
+
+                            </div>
+                            <div class="drink-details">
+                                <span class="drink-cap">33 cl</span>
+                                <span class="drink-alc">4.5 %</span>
+                                <span class="drink-amount" id="1">1 kpl</span>
+                            </div>
+                        </td>
+                        <td class="drink-buttons">
+                            <span id="remove-drink" class="" onclick="">R</span>
+                            <button id="increase-drink" class="increase-value-btn" onclick="">+</button>
+                        </td>
+                    </tr> -->
+                </table>
+                <div class="border-line"></div>
+                <table id="total-table">
+                    <tr>
+                        <td class="total-text"><span id="total">Yhteensä</span></td>
+                        <td class="total-values"><span id="total-cap"></span></td>
+                        <td class="total-values"><span id="total-alc"></span></td>
+                        <td class="total-values"><span id="total-kcal"></span></td>
+                        <td class="total-values"><span id="total-amount"></span></td>
+                    </tr>
+                </table>
+                <button id="add-drink-btn" class="primary-btn" onclick="addDrinkFormDisplay()">Lisää Juoma</button>
+                <button id="reset-btn" class="secondary-btn">Nollaa</button>
+
+                <!-- <button onclick="updateTotals()">laske</button> -->
+            </div>
+            <div class="count-bac-section">
+                <h2>Laske veren alkoholipitoisuus</h2>
+                <div class="gender-input">
+                    <label for="gender">Sukupuoli</label>
+                    <div class="gender-input-checkbox">
+                        <input id="gender-male" name="gender" type="radio" value="male">Mies
+                    </div>
+                    <div class="gender-input-checkbox">
+                        <input id="gender-female" name="gender" type="radio" value="female">Nainen
+                    </div>
+                </div>
+                <label for="weight">Paino</label>
+                <div class="input-row">
+                    <input id="weight" name="weight" type="number">
+                </div>
+                <label for="time-start">Juominen aloitettu</label>
+                <div class="input-row">
+                    <input id="time-start" name="time-start" type="time">
+                </div>
+                <label for="time-end">Juominen lopetettu</label>
+                <div class="input-row">
+                    <input id="time-end" name="time-end" type="time">
+                </div>
+                <button class="primary-btn" onclick="countBAC()">Laske</button>
+            </div>
+            <div class="chart-output">
+                <p id="permille"></p>
+                <canvas id="permillesChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="./js/calculations.js"></script>
+    <script src="./js/chart.js"></script>
+    <script src="./js/dom.js"></script>
+    <script src="./js/localstorage.js"></script>
+    <script src="./js/table.js"></script>
+    <script src="https://kit.fontawesome.com/013e37b8f7.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>
