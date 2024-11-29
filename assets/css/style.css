@@ -399,7 +399,7 @@ td {
 } */
 
 @media only screen and (max-width: 600px) {
-    .disable-dbl-tap-zoom {
+    * {
         touch-action: manipulation;
     }
 
