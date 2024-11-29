@@ -25,10 +25,12 @@
     padding: 0;
     font-family: Tahoma, sans-serif;
     box-sizing: border-box;
+
 }
 
 body {
     color: var(--text-color);
+    background-color: var(--container-bg);
 }
 
 .container {
@@ -397,6 +399,10 @@ td {
 } */
 
 @media only screen and (max-width: 600px) {
+    .disable-dbl-tap-zoom {
+        touch-action: manipulation;
+    }
+
     h1 {
         padding-top: 35px;
         padding-left: 25px;
