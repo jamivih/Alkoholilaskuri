@@ -16,15 +16,19 @@ const generateChart = (permille, bac) => {
     const alcoholBurnedTime = decimalToHours(alcoholBurned);
     const legalLimitTime = decimalToHours(legalToDrive);
 
+    // 0.5 in data only if permille level goes above it
+    const data = (permille < 0.5) ? [0, permille, 0] : [0, permille, 0.5, 0];
     const ctx = document.getElementById('permillesChart').getContext('2d');
-    const data = [0, permille, 0.5, 0];
 
     // Text content and chart labels
     if (permille <= 0) {
         labels = [timeStart, timeEnd];
         document.getElementById('permille').textContent = `Veren arvioitu alkoholipitoisuus on ${permille} promillea.`;
         // createPermilleChart(ctx, labels, data)
-        console.log('labels 2', labels);
+    } else if (permille < 0.5) {
+        labels = [timeStart, timeEnd, alcoholBurnedTime];
+        document.getElementById('permille').textContent = `Veren arvioitu alkoholipitoisuus on ${permille.toFixed(2)} promillea. Alkoholi on palanut noin klo ${alcoholBurnedTime} mennessä.`;
+        createPermilleChart(ctx, labels, data)
     } else {
         labels = [timeStart, timeEnd, legalLimitTime, alcoholBurnedTime];
         document.getElementById('permille').textContent = `Veren arvioitu alkoholipitoisuus on ${permille.toFixed(2)} promillea. Alkoholi on palanut noin klo ${alcoholBurnedTime} mennessä.`;

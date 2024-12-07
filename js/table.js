@@ -1,4 +1,13 @@
-document.getElementById('drink-to-table-btn').addEventListener('click', () => {
+// Enter to add drink to the table and Esc to cancel (esc not working right now)
+document.getElementById('add-drink-form').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        getDrinkInput();
+    } else if (event.key === 'Escape') {
+        addDrinkFormDisplay();
+    }
+});
+
+const getDrinkInput = () => {
     const name = document.getElementById('drink-name').value;
     const capacity = parseFloat(document.getElementById('drink-capacity').value) / 100;
     const alcohol = document.getElementById('drink-alcohol').value;
@@ -22,8 +31,12 @@ document.getElementById('drink-to-table-btn').addEventListener('click', () => {
 
         addDrinkToTable(drink);
     }
-    //tähän form styling none
-});
+}
+
+// document.getElementById('drink-to-table-btn').addEventListener('click', () => {
+    
+//     //tähän form styling none
+// });
 
 function addDrinkToTable(drink) {
     const table = document.getElementById('drink-table');
@@ -119,7 +132,12 @@ function addDrinkToTable(drink) {
     saveData();
     isDrinkTableEmpty();
     addDrinkFormDisplay();
-    updateTotals();   
+    updateTotals();
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
 }
 
 const isValidTextInput = (input) => {

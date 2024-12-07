@@ -1,6 +1,7 @@
 const addDrinkFormDisplay = () => {
     const addDrinkForm = document.getElementById('add-drink-form');
     const addDrinkButton = document.getElementById('add-drink-btn');
+    const drinkInput = document.getElementById('drink-name');
         if (addDrinkForm.style.display === 'none' || addDrinkForm.style.display === '') {
             addDrinkForm.style.display = 'block';
             addDrinkButton.style.display = 'none';
@@ -8,6 +9,9 @@ const addDrinkFormDisplay = () => {
             addDrinkForm.style.display = 'none';
             addDrinkButton.style.display = 'block';
         }
+
+        addDrinkForm.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        drinkInput.focus();
 }
 
 // Increase drink amount

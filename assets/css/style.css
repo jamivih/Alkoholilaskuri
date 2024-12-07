@@ -429,8 +429,11 @@ td {
     }
 
     #drink-table {
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        padding: 10px;
+        border-collapse: separate;
+        border-spacing: 0 15px;
     }
 
     .drink-header {
@@ -453,6 +456,10 @@ td {
         margin-top: 5px;
         margin-left: 5px;
         margin-right: 5px;
+    }
+
+    tr {
+        padding-bottom: 25px;
     }
 
     .total-text, .total-values {
@@ -483,5 +490,15 @@ td {
         transform: translate(-38px, 4px);
         font-size: 0.7em;
     }
+
+    .secondary-btn:hover {
+        background-color: transparent;
+    }
+
+    .secondary-btn:active {
+        background-color: var(--secondary-btn-bg-hover);
+    }
+
+    
     
   }
