@@ -29,10 +29,12 @@ const generateChart = (permille, bac) => {
         labels = [timeStart, timeEnd, alcoholBurnedTime];
         document.getElementById('permille').textContent = `Veren arvioitu alkoholipitoisuus on ${permille.toFixed(2)} promillea. Alkoholi on palanut noin klo ${alcoholBurnedTime} mennessä.`;
         createPermilleChart(ctx, labels, data)
+        saveUserDrinkingInfo();
     } else {
         labels = [timeStart, timeEnd, legalLimitTime, alcoholBurnedTime];
         document.getElementById('permille').textContent = `Veren arvioitu alkoholipitoisuus on ${permille.toFixed(2)} promillea. Alkoholi on palanut noin klo ${alcoholBurnedTime} mennessä.`;
-        createPermilleChart(ctx, labels, data)
+        createPermilleChart(ctx, labels, data);
+        saveUserDrinkingInfo();
     }
 }
 

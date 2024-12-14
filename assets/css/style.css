@@ -10,11 +10,11 @@
 }
 
 .darkmode {
-    --container-bg: #141414;
-    --drink-section-bg: rgb(31, 31, 31);
+    --container-bg: #121212;
+    --drink-section-bg: #1c1c1c;
     --text-color: white;
     --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.505);
-    --input-bg: #2d2c2c;
+    --input-bg: #282828;
     --border-line: 1px solid #ffffff38;
     --secondary-btn-text-color: white;
     --secondary-btn-bg-hover: #ffffff09;
