@@ -8,20 +8,31 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
 const enableDarkmode = () => {
     document.body.classList.add('darkmode');
     localStorage.setItem('darkmode', 'active');
+    document.getElementById('moon').style.display = 'none';
+    document.getElementById('lightbulb').style.display = '';
 }
 
 const disableDarkmode = () => {
     document.body.classList.remove('darkmode');
     localStorage.setItem('darkmode', null);
+    document.getElementById('lightbulb').style.display = 'none';
+    document.getElementById('moon').style.display = '';
 }
 
 // On page load, check saved preference
 document.addEventListener('DOMContentLoaded', () => {
     const darkMode = localStorage.getItem('darkmode');
+    const themeToggle = document.getElementById('theme-toggle');
     if (darkMode === 'active') {
         enableDarkmode();
+        themeToggle.checked = true
+        document.getElementById('moon').style.display = 'none';
+        document.getElementById('lightbulb').style.display = '';
     } else {
         disableDarkmode();
+        themeToggle.checked = false
+        document.getElementById('lightbulb').style.display = 'none';
+        document.getElementById('moon').style.display = '';
     }
 });
 

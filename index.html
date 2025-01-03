@@ -11,11 +11,21 @@
 
 <body>
     <div class="container">
-        <span id="theme-toggle">Teema</span>
+        <!-- <span id="theme-toggle">Teema</span> -->
         <div class="add-drink-section">
+            <div class="header">
             <h1>Alkoholilaskuri</h1>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round">
+                    <i class="fa-regular fa-lightbulb" id="lightbulb"></i>
+                    <i class="fa-regular fa-moon" id="moon"></i>
+                </span>
+            </label>
+        </div>
             <header>Alkoholilaskurin avulla voit lisätä haluamasi juomia ja laskea arvion veren alkoholipitoisuudesta.
             </header>
+
             <div id="add-drink-form">
                 <label for="name">Nimi</label>
                 <div class="input-row">  
