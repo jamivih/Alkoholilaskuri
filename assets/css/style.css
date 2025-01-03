@@ -381,6 +381,8 @@ td {
     opacity: 0;
     width: 0;
     height: 0;
+    appearance: none;
+    -webkit-appearance: none;
   }
   
   /* The slider */
@@ -392,7 +394,6 @@ td {
     right: 0;
     bottom: 0;
     background-color: #e0e0e0;
-    -webkit-transition: .4s;
     transition: .4s;
   }
 
@@ -417,7 +418,6 @@ td {
     left: 4px;
     bottom: 4px;
     background-color: #4b3bfe;
-    -webkit-transition: .4s;
     transition: .4s;
   }
 
@@ -429,8 +429,8 @@ td {
 
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
+    /* -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px); */
     transform: translateX(26px);
     text-align: center;
     color: black;
