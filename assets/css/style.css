@@ -253,6 +253,25 @@ td {
     margin-bottom: 30px;
 } */
 
+.calculate-alcoholicity-btn {
+    outline: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #7b7b7b;
+    color: #ffffff;
+    /* border: 1px solid #1e1e1e; */
+    border: none;
+    font-size: 14px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.calculate-alcoholicity-btn:hover {
+    transform: scale(1.07);
+    background-color: #4b3bfe;
+}
 
 .increase-value-btn {
     outline: none;

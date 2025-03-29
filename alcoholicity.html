@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laske Juoman Alkoholipitoisuus</title>
+</head>
+<body>
+    <h2>Juoman alkoholipitoisuus</h2>
+    <div id="inputs">
+        <div class="beverage">
+            <input type="text" placeholder="Juoman nimi" class="name">
+            <input type="number" placeholder="%" class="alcohol" min="0" max="100">
+            <input type="number" placeholder="Tilavuus (cl)" class="volume" min="0">
+        </div>
+    </div>
+    <button onclick="addBeverage()">Lisää juoma</button>
+    <button onclick="calculateAlcoholicity()">Laske</button>
+    <h3 id="result">Total %: -</h3>
+    <form action="index.html">
+        <input type="submit" value="Takaisin" />
+    </form>
+    
+
+    <script>
+        const addBeverage = () => {
+            let container = document.createElement("div");
+            container.className = "beverage";
+            container.innerHTML = `
+                <input type="text" placeholder="Juoman nimi" class="name">
+                <input type="number" placeholder="%" class="alcohol" min="0" max="100">
+                <input type="number" placeholder="Tilavuus (cl)" class="volume" min="0">
+            `;
+            document.getElementById("inputs").appendChild(container);
+        }
+
+        const calculateAlcoholicity = () => {
+            let beverages = document.querySelectorAll(".beverage");
+            let totalAlcohol = 0;
+            let totalVolume = 0;
+
+            beverages.forEach(bev => {
+                let alcoholicity = parseFloat(bev.querySelector(".alcohol").value) || 0;
+                let volume = parseFloat(bev.querySelector(".volume").value) || 0;
+
+                totalAlcohol += (alcoholicity / 100) * volume;
+                totalVolume += volume;
+            });
+
+            let result = totalVolume > 0 ? (totalAlcohol / totalVolume) * 100 : 0;
+            document.getElementById("result").textContent = `Total %: ${result.toFixed(2)}%`;
+        }
+    </script>
+</body>
+</html>

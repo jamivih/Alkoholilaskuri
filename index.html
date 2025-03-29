@@ -14,21 +14,21 @@
         <!-- <span id="theme-toggle">Teema</span> -->
         <div class="add-drink-section">
             <div class="header">
-            <h1>Alkoholilaskuri</h1>
-            <label class="switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider round">
-                    <i class="fa-regular fa-lightbulb" id="lightbulb"></i>
-                    <i class="fa-regular fa-moon" id="moon"></i>
-                </span>
-            </label>
-        </div>
+                <h1>Alkoholilaskuri</h1>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round">
+                        <i class="fa-regular fa-lightbulb" id="lightbulb"></i>
+                        <i class="fa-regular fa-moon" id="moon"></i>
+                    </span>
+                </label>
+            </div>
             <header>Alkoholilaskurin avulla voit lisätä haluamasi juomia ja laskea arvion veren alkoholipitoisuudesta.
             </header>
 
             <div id="add-drink-form">
                 <label for="name">Nimi</label>
-                <div class="input-row">  
+                <div class="input-row">
                     <input id="drink-name" type="text" name="name" required>
                 </div>
                 <label for="capacity">Tilavuus (cl)</label>
@@ -37,10 +37,15 @@
                     <input id="drink-capacity" class="value-input" type="text" name="capacity" required>
                     <button id="increase-cap" class="increase-value-btn" onclick="increaseValue(this)">+</button>
                 </div>
-                <label for="alcohol">Vahvuus %</label>
+                <label for="alcohol">Vahvuus %
+                    <form action="alcoholicity.html">
+                        <input class="calculate-alcoholicity-btn" type="submit" value="Laske juoman vahvuus" />
+                    </form>
+                </label>
                 <div class="input-row">
                     <button id="decrease-alc" class="decrease-value-btn" onclick="decreaseValue(this)">-</button>
-                    <input id="drink-alcohol" class="value-input" type="text" name="alcohol" value="5.5" placeholder=5.5 required>
+                    <input id="drink-alcohol" class="value-input" type="text" name="alcohol" value="5.5" placeholder=5.5
+                        required>
                     <button id="increase-alc" class="increase-value-btn" onclick="increaseValue(this)">+</button>
                 </div>
                 <label for="calories">Kalorit</label>
@@ -52,7 +57,8 @@
                     </select>
                 </div>
                 <button id="drink-to-table-btn" class="primary-btn" onclick="getDrinkInput()">Lisää</button>
-                <button id="cancel-btn" class="secondary-btn" onclick="addDrinkFormDisplay()"><i class="fa-solid fa-xmark"></i> Peruuta</button>
+                <button id="cancel-btn" class="secondary-btn" onclick="addDrinkFormDisplay()"><i
+                        class="fa-solid fa-xmark"></i> Peruuta</button>
             </div>
             <div class="drink-table-section">
                 <h2>Juomat</h2>
